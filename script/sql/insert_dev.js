@@ -14,7 +14,7 @@ module.exports =  (url, word) =>{
         const sql = `INSERT INTO test (url, word) VALUES ('${url}', '${word}')`;
         con.query(sql, function (err, result) {
             if (err) throw err;
-            console.log("1 record inserted");
+            console.log("1 data in the database");
         });
     });
 };
