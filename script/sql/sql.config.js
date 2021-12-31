@@ -1,10 +1,12 @@
 const mysql = require('mysql');
 
-const con = mysql.createConnection({
+const SqlCon = mysql.createConnection({
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE
 });
 
-module.exports = con;
+const color = '\x1B[36m%s\x1B[0m'
+
+module.exports = {SqlCon, color};

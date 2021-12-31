@@ -1,32 +1,39 @@
 const con = require('./sql.config.js');
 
 
-module.exports = class {
-  constructor() {
-    this.result = null;
-  }
-  methon(search){
-    con.connect(function (err) {
-      if (err) throw err;
+module.exports = function (search) {
+ 
 
-      con.query(`SELECT * FROM ${search}`, function (err, result, fields) {
-        if (err) throw err;
-        // console.log(result);
-        this.result = result
-
-      });
-
-
-      con.end((err) => {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log('close');
+  let ii = (resolve, reject)=>{
+    con.SqlCon.connect(function (err) {
+      if (err) throw err
+    
+      con.SqlCon.query(`SELECT * FROM ${search}`, function select(err, result, fields) {
+        if(err){
+          throw err
+        }else{
+          resolve(result)
         }
-      })
-
-
-    });
-
+      });
+      con.SqlCon.end()
+      
+    })
+    
   }
+
+  
+
+  let methon = new Promise(function (resolve, reject) {
+    ii(resolve, reject);
+  });
+
+
+  this.select = methon
+
+
+
+
+
+
+
 }
