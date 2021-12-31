@@ -7,7 +7,7 @@ module.exports = () => {
         let newsql = new sql(search)
         newsql.select.then(
             (json) => {
-                setTimeout(()=>{res.json(json)}, 1000)
+              res.json(json)
                 
             }
         )
