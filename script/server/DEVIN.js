@@ -3,7 +3,7 @@ const app = require('./sever.config.js');
 const sql = require('../sql/DEVIN.sql.js');
 module.exports = () => {
 
-    app.get('/', (req, res) => {
+    app.get('/dev', (req, res) => {
         let url = req.query.url;
         let word = req.query.word;
         let de = req.query.de;
