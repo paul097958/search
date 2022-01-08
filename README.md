@@ -9,4 +9,4 @@ Then, the server is run, you can visit http://127.0.0.1:3000 or http://[your ip]
 
 ## use(web developer)
 Use the jsonp to cross the back-end API ,example below
-<script src="http://[**your ip** or **http://127.0.0.1:3000"></script>
+<script src=" http://[your ip]:3000 or http://127.0.0.1:3000 "></script>
