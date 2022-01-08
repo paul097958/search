@@ -1,6 +1,8 @@
 @media screen and (min-width:1075px) {
     body {
         margin: 0;
+        display: flex;
+        
     }
 
     .header {
@@ -44,18 +46,27 @@
     }
 
     main{
-        height: 1000px;
-        width: 50%;
+        width: 100%;
         position: absolute;
         top: 100px;
-        margin: 0 50% 0 50%;
+        display: flex;
+        justify-content: center;
+        
+        
+        
     }
 
-    .d1{
+    .data{
         
 
-    }/*資料放置div*/
-    .ti{
+    }
+
+    .de{
+
+    }
+
+    
+    .datatitle{
         font-weight: bold;
         font-family: Trattatello, fantasy;
         font-size: 30px;
