@@ -4,14 +4,13 @@ module.exports = () => {
     
     app.get('/search', (req, res) => {
         let search = req.query.search;
-        let newsql = new sql(search)
-        newsql.select.then(
-            (json) => {
-              res.json(json)
-                
-            }
-        )
-
+        sql(search).then(
+                (json) => {
+                  res.json(json)
+                    
+                }
+            )
+    
 
 
     })

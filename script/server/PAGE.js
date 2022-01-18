@@ -15,8 +15,8 @@ module.exports = () => {
         res.sendFile(path.resolve(`./src/js/index.js`))
     });
 
-    app.get('/img/paul.jpg', (req, res) => {
-        res.sendFile(path.resolve(`./src/img/paul.jpg`))
+    app.get('/img/paula.png', (req, res) => {
+        res.sendFile(path.resolve(`./src/img/paula.png`))
     });
 
 }
