@@ -7,7 +7,8 @@
 }
 
 header {
-    height: 60px;/*in*/
+    height: 60px;
+    /*in*/
     width: auto;
     background-color: blanchedalmond;
     display: flex;
@@ -35,16 +36,16 @@ header .search {
     font-size: 25px;
     padding: 10px;
     border-radius: 60px;
-    border: 1px solid black;
+    border: 1px solid rgb(145, 145, 145);
     outline: 0;
 
 }
 
-.title{
+.title {
     font-size: 30px;
 }
 
-footer{
+footer {
     height: 60px;
     width: 100%;
     background-color: rgb(194, 194, 194);
@@ -56,6 +57,17 @@ footer{
     bottom: 0;
 }
 
-body{
+body {
     position: relative;
+}
+
+main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data {
+    margin: 10px;
 }
