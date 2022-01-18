@@ -1,14 +1,32 @@
-const host = 'http://127.0.0.1:'
-const port = 3000
-
 const search = document.getElementById('search');
+const Url = new URL(location.href);
+const UrlSearch = Url.search;
+const params = Url.searchParams;
+
+
+if(UrlSearch != ""){
+    for (let pair of params.entries()) {
+        const v = pair[1]
+        search.value = v
+        sendToServer(v)
+    }
+}
+    
 search.addEventListener('keyup', (key) => {
     var searchValue = search.value
     if (key.keyCode == 13) {
-        sendToServer(searchValue)
+        // sendToServer(searchValue)
+        if (UrlSearch == "") {
+            location.href = location.href + '?v=' + searchValue;
+        }else{
+            let hrefUrl = location.href.replace(UrlSearch, '?v=' + searchValue)
+            location.href = hrefUrl
+        }
     }
 
 })
+
+
 
 function sendToServer(search) {
 
@@ -16,11 +34,11 @@ function sendToServer(search) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let json = JSON.parse(xhttp.responseText)
-            console.log(json);
+            console.log(json);// del
             dom(json);
         }
     };
-    xhttp.open("GET", `${host}${port}/search?search=${search}`);
+    xhttp.open("GET", `${location.href.replace(UrlSearch, "")}search?search=${search}`);
     xhttp.send();
 
 }
