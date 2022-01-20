@@ -2,7 +2,6 @@ const path = require('path');
 const app = require('./sever.config.js');
 const sql = require('../sql/DEVIN.sql.js');
 module.exports = () => {
-
     app.get('/dev', (req, res) => {
         let url = req.query.url;
         let word = req.query.word;
@@ -15,9 +14,6 @@ module.exports = () => {
             sql(url, word, de)
         } else {
             res.sendFile(path.resolve('./json/401.json'))
-        }
-
-        
-    });
-
+        }    
+    });    
 }
