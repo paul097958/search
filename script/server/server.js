@@ -8,6 +8,7 @@ module.exports = () => {
         USERSEARCH();
         PAGE();
         app.listen(3000);
+        console.log("server is running");
     } catch (e) {
         console.error(e);
     }
